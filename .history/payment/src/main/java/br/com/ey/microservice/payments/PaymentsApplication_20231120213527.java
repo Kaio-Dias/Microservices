@@ -1,13 +1,13 @@
-package br.com.ey.microservice.payments;
+package br.com.ey.microservice.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PaymentsApplication {
+public class PaymentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PaymentsApplication.class, args);
+		SpringApplication.run(PaymentApplication.class, args);
 	}
 
 }
