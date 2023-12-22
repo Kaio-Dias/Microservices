@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version>
+		<version>3.1.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.ey.microservice</groupId>
@@ -30,11 +30,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-mysql</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
@@ -46,16 +41,42 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core UNICA VERSAO QUE SUPORTA  O POSTGRES 16-->
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<version>10.0.0</version>
+    		<groupId>org.flywaydb</groupId>
+    		<artifactId>flyway-core</artifactId>
+    		<version>10.1.0</version>
 		</dependency>
+
+		<parent>
+        	<groupId>org.flywaydb</groupId>
+        	<artifactId>flyway-parent</artifactId>
+			<version>10.1.0</version>
+    	</parent>
+    	<modelVersion>4.0.0</modelVersion>
+
+    	<artifactId>flyway-sqlserver</artifactId>
+    	<packaging>jar</packaging>
+    	<name>${project.artifactId}</name>
+    	<version>${project.parent.version}</version>
+		
+		<artifactId>flyway-sqlserver</artifactId> 
+		<packaging>jar</packaging>
+		<name>${project.artifactId}</name>
+		<version>${project.parent.version}</version>
+
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.6.0</version>
+    		<groupId>com.redgate.flyway</groupId>
+    		<artifactId>flyway-sqlserver</artifactId>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+    		<groupId>org.postgresql</groupId>
+    		<artifactId>postgresql</artifactId>
+    		<version>42.2.16</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

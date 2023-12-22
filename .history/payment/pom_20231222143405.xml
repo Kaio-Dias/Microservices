@@ -35,16 +35,6 @@
     		</exclusions>
 		</dependency><!-- ALTERACAO AQUI-->
 
-		<dependency><!-- ALTERACAO AQUI-->
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter</artifactId>
-		</dependency><!-- ALTERACAO AQUI-->
-
-		<!--<dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-logging</artifactId>
-		</dependency> ALTERACAO AQUI-->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -116,9 +106,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.1.6</version>
 				<configuration>
-					<mainClass>br.com.ey.microservice.payments.PaymentsApplication</mainClass>
 					<image>
 						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
 					</image>
@@ -129,14 +117,8 @@
 						</exclude>
 					</excludes>
 				</configuration>
-				<executions>
-                	<execution>
-                    	<goals>
-                        	<goal>repackage</goal>
-                    	</goals>
-                	</execution>
-            	</executions>
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
