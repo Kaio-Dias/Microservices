@@ -40,6 +40,12 @@ public class OrderController {
         return ResponseEntity.ok(dto); 
     }
 
+    //Load Balancing
+    @GetMapping("/port")
+    public String getPort(@org.springframework.beans.factory.annotation.Value("${local.server.port}")String port){
+        return String.format("Request called by instance executing at port %s", port);
+    }
+
     @PostMapping()
     public ResponseEntity<OrderDTO> doOrder(@RequestBody @Valid OrderDTO dto, UriComponentsBuilder uriBuilder){
         OrderDTO orderPlaced = service.createOrder(dto);
