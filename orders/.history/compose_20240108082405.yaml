@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=kaio
+      - POSTGRESQL_PASSWORD=123
+      - POSTGRESQL_DATABASE=postgresql
+    networks:
+      services:
+        ipv4_address: 172.0.0.11
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 80:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=kaio@email.com
+      - PGADMIN_DEFAULT_PASSWORD=123
+    networks:
+      services:
+        ipv4_address: 172.0.0.21
+    depends_on:
+        - postgresql
+
+networks:
+  services:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.0.0.0/24
