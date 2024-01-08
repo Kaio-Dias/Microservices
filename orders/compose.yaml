@@ -11,7 +11,7 @@ services:
       - POSTGRESQL_DATABASE=postgresql
     networks:
       services:
-        ipv4_address: 172.0.0.10
+        ipv4_address: 172.0.0.30
   
   pgadmin:
     image: dpage/pgadmin4
@@ -22,7 +22,7 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=123
     networks:
       services:
-        ipv4_address: 172.0.0.20
+        ipv4_address: 172.0.0.40
     depends_on:
         - postgresql
 
